@@ -6,8 +6,8 @@ For more such project go through my [profile](https://github.com/HeimanPictures)
 
 ## 📝 Note
 
-- There could be certain issues. Please do report us through [issues]().
-- If any extra features required. Do contact us freely through [discussion]() or social medias.
+- There could be certain issues. Please do report us through [issues](https://github.com/HeimanPictures/PicDB-UI/issues/new).
+- If any extra features required. Do contact us freely through [discussion](https://github.com/HeimanPictures/PicDB-UI/discussions) or social medias.
 - The size limit will increase after I optimize the present code for everyones need.
 - If you want to enhance the UI your free to make changes. But, do provide us an screenshot with the pull request to evaluate it. We will make sure to provide you credits for your work.
 
