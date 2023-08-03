@@ -6,6 +6,7 @@
 
 import React from 'react';
 import {Routes, Route } from 'react-router-dom';
+import { inject } from '@vercel/analytics';
 
 import './css/style.css';
 import HomeImg from "./asset/home.jpg"
@@ -21,6 +22,7 @@ function App() {
   //   document.querySelector('html').style.scrollBehavior = ''
   // }, [location.pathname]); // triggered on route change
   
+  inject();
   return (
     <div className="flex flex-col w-full min-h-screen bg-fixed bg-no-repeat bg-cover backdrop-blur-sm" id="journal-scroll" style={{backgroundImage: `url(${HomeImg})`}}>
       <Header />
