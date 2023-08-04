@@ -38,7 +38,7 @@ function Home() {
         },
       };
       
-      axios.post('https://picdb.onrender.com/api/v1/upload', formData, config)
+      axios.post('http://picdb.onrender.com/api/v1/upload', formData, config)
         .then((response) => {
           console.log(response.data['success']);
           if (response.data['success'] === "true") {
