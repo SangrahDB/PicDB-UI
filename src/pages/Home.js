@@ -56,14 +56,14 @@ function Home() {
     }
   }
 
-  const [isCopied, setIsCopied] = useState(false);
+  // const [isCopied, setIsCopied] = useState(false);
   const handleCopyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(url);
-      setIsCopied(true);
-      setTimeout(() => {
-        setIsCopied(false);
-      }, 3000);
+      // setIsCopied(true);
+      // setTimeout(() => {
+      //   setIsCopied(false);
+      // }, 3000);
     } catch (error) {
       console.error('Failed to copy to clipboard:', error);
     }
