@@ -47,6 +47,7 @@ function Home() {
             setUrl(response.data["url"]);
           } else {
             setError(true)
+            setProgress(0)
             alert('File uploaded not successful.');
           }
         })
