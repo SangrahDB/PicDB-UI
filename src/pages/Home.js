@@ -26,6 +26,7 @@ function Home() {
       return;
     }
     try {
+      const [error, setError] = useState(false);
       const formData = new FormData();
       formData.append('file', file, file.name);
       const config = {
@@ -40,11 +41,12 @@ function Home() {
       
       axios.post('https://picdb-api.onrender.com/api/v1/upload', formData, config)
         .then((response) => {
-          console.log(response.data['success']);
+          // console.log(response.data['success']);
           if (response.data['success'] === "true") {
             setTitle(file.name);
             setUrl(response.data["url"]);
           } else {
+            setError(true)
             alert('File uploaded not successful.');
           }
         })
@@ -129,7 +131,7 @@ function Home() {
                                           <input type="submit" value="Upload" className="flex justify-center w-full p-4 my-5 font-semibold tracking-wide text-gray-100 transition duration-300 ease-in bg-blue-500 rounded-full shadow-lg cursor-pointer focus:outline-none focus:shadow-outline hover:bg-blue-600"
                                           /> */}
                                   {
-                                    (progress)?(
+                                    (progress && error)?(
                                       <div className="w-full">
                                         <div className="bg-gray-600 rounded-lg">
                                           <div className="flex items-center bg-orange-600 rounded-lg" style={{ width: `${progress}%` }}>
