@@ -13,6 +13,7 @@ function Home() {
   const [url, setUrl] = useState();
   const [title, setTitle] = useState();
   const [progress, setProgress] = useState(0);
+  const [error, setError] = useState(false);
   const handleChange = async (e) => {
     // setFile(URL.createObjectURL(e.target.files[0]));
     // setFile(e.target.files[0]);
@@ -26,7 +27,6 @@ function Home() {
       return;
     }
     try {
-      const [error, setError] = useState(false);
       const formData = new FormData();
       formData.append('file', file, file.name);
       const config = {
