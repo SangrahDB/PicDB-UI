@@ -132,7 +132,7 @@ function Home() {
                                           <input type="submit" value="Upload" className="flex justify-center w-full p-4 my-5 font-semibold tracking-wide text-gray-100 transition duration-300 ease-in bg-blue-500 rounded-full shadow-lg cursor-pointer focus:outline-none focus:shadow-outline hover:bg-blue-600"
                                           /> */}
                                   {
-                                    (progress && error)?(
+                                    (progress && !error)?(
                                       <div className="w-full">
                                         <div className="bg-gray-600 rounded-lg">
                                           <div className="flex items-center bg-orange-600 rounded-lg" style={{ width: `${progress}%` }}>
