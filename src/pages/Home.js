@@ -71,7 +71,7 @@ function Home() {
       //   setIsCopied(false);
       // }, 3000);
       let copyBtn = document.getElementById("copyBtn");
-      copyBtn.innerText = "Copied!";
+      copyBtn.innerText = "Copied";
       setTimeout(() => {
           copyBtn.innerText = "COPY";
       }, 1650);//button text returns to normal after 1.65 seconds
