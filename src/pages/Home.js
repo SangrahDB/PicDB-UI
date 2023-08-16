@@ -70,6 +70,11 @@ function Home() {
       // setTimeout(() => {
       //   setIsCopied(false);
       // }, 3000);
+      let copyBtn = document.getElementById("copyBtn");
+      copyBtn.innerText = "Copied";
+      setTimeout(() => {
+          copyBtn.innerText = "COPY";
+      }, 1650);//button text returns to normal after 1.65 seconds
     } catch (error) {
       console.error('Failed to copy to clipboard:', error);
     }
@@ -118,6 +123,7 @@ function Home() {
                   onClick={handleCopyToClipboard}
                   type="button"
                   className="inline-flex flex-shrink-0 px-6 py-4 text-lg font-semibold text-white transition bg-orange-600 border-0 rounded hover:bg-orange-600 hover:brightness-50 focus:outline-none"
+                  id='copyBtn'//referenced it with an id
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
