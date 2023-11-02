@@ -31,7 +31,7 @@ function Home() {
       formData.append('file', file, file.name);
       const config = {
         headers: {
-          accept: 'application/json',
+          // accept: 'application/json',
           'Content-Type': 'multipart/form-data',
         },
         onUploadProgress: (progressEvent) => {
@@ -45,12 +45,13 @@ function Home() {
         .post('https://picdb-api.onrender.com/api/v1/upload', formData, config)
         .then((response) => {
           // console.log(response.data['success']);
-          if (response.data['success'] === 'true') {
+          if (response.data['success'] === true) {
             setTitle(file.name);
             setUrl(response.data['durl']);
           } else {
             setError(true);
             setProgress(0);
+            console.log("Error: "+response.data['message']);
             alert('File uploaded not successful.');
           }
         })
@@ -62,14 +63,9 @@ function Home() {
     }
   };
 
-  // const [isCopied, setIsCopied] = useState(false);
   const handleCopyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(url);
-      // setIsCopied(true);
-      // setTimeout(() => {
-      //   setIsCopied(false);
-      // }, 3000);
       let copyBtn = document.getElementById("copyBtn");
       copyBtn.innerText = "Copied";
       setTimeout(() => {
@@ -95,6 +91,9 @@ function Home() {
                   <label className="text-lg font-semibold leading-10 text-white">
                     {title}
                   </label>
+                  {/* <div className="relative flex p-2">
+                    <img width='512px' className='flex items-center justify-center p-3' alt='The image' src={url} />
+                  </div> */}
                   <div className="relative">
                     <input
                       className="w-full px-4 py-3 text-xl font-medium leading-8 text-white transition duration-200 ease-in-out bg-gray-700 border-transparent rounded-md shadow-2xl outline-none border-y border-t-gray-600 focus:border focus:border-blue-600 focus:bg-transparent focus:ring-2 focus:ring-blue-600"
@@ -123,7 +122,7 @@ function Home() {
                   onClick={handleCopyToClipboard}
                   type="button"
                   className="inline-flex flex-shrink-0 px-6 py-4 text-lg font-semibold text-white transition bg-orange-600 border-0 rounded hover:bg-orange-600 hover:brightness-50 focus:outline-none"
-                  id='copyBtn'//referenced it with an id
+                  // id='copyBtn'//referenced it with an id
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +138,7 @@ function Home() {
                       d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"
                     />
                   </svg>
-                  COPY
+                  <span id='copyBtn'>COPY</span>
                 </button>
               </div>
             ) : (
