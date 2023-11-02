@@ -22,7 +22,7 @@ function Header() {
     }, []);
     return (
       <>
-        <header className="fixed top-0 z-50 w-full text-gray-100 transition-all duration-300 ease-in-out body-font">
+        <header className="fixed top-0 z-50 w-full text-gray-100 transition-all duration-300 ease-in-out body-font fixed">
             <div className="container flex flex-row flex-wrap items-center p-5 mx-auto">
                 <a className="flex-grow font-semibold text-2x1" href="/">PicDB</a>
                 <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto">

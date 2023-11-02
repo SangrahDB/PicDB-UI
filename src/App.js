@@ -9,7 +9,6 @@ import {Routes, Route } from 'react-router-dom';
 import { inject } from '@vercel/analytics';
 
 import './css/style.css';
-import HomeImg from "./asset/home.jpg"
 import Home from './pages/Home';
 import Header from './pages/component/Header';
 
@@ -24,7 +23,7 @@ function App() {
   
   inject();
   return (
-    <div className="flex flex-col w-full min-h-screen bg-fixed bg-no-repeat bg-cover backdrop-blur-sm" id="journal-scroll" style={{backgroundImage: `url(${HomeImg})`}}>
+    <div className="flex flex-col w-full min-h-screen bg-fixed bg-no-repeat bg-cover backdrop-blur-sm" id="journal-scroll" style={{backgroundImage: `url(${require("./asset/home.jpg")})`}}>
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />

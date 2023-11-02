@@ -47,7 +47,7 @@ function Home() {
           // console.log(response.data['success']);
           if (response.data['success'] === 'true') {
             setTitle(file.name);
-            setUrl(response.data['url']);
+            setUrl(response.data['durl']);
           } else {
             setError(true);
             setProgress(0);
