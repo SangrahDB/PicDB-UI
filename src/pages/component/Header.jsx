@@ -29,6 +29,9 @@ function Header() {
                     <a href="/" className="mr-6 cursor-pointer hover:text-orange-600 ">Home</a>
                     <a href="/report" className="mr-6 cursor-pointer hover:text-orange-600">Report</a>
                     <a href="/contact" className="mr-6 cursor-pointer hover:text-orange-600">Contact</a>
+                    <a href="https://github.com/AkkilMG/PicDB-UI" className="mr-6 cursor-pointer bg-orange-600 hover:bg-orange-700 text-white">
+                        Source Code
+                    </a>
                 </nav>
             </div>
 
