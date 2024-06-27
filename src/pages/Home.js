@@ -22,7 +22,7 @@ function Home() {
       alert('Please select an image before uploading.');
       return;
     }
-    if (file.size / (1024 * 1024) > 50) {
+    if (file.size / (1024 * 1024) > 20) {
       alert('Please select an image under 50mb. As its a limit.');
       return;
     }
